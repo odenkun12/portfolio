@@ -1,15 +1,26 @@
+import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
 
 export default function SiteHeader() {
   return (
     <header className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md border-b border-gray-200 z-30 transition-all duration-300">
       <div className="container mx-auto flex items-center justify-between p-4">
-        <a href="/" className="flex items-center gap-2 group">
+        <Link to="/" className="flex items-center gap-2 group">
           <img src={logo} alt="Logo" className="w-8 h-8 object-contain group-hover:scale-110 transition-transform" />
           <span className="text-gray-800 font-bold text-xl tracking-tight group-hover:text-green-600 transition-colors">
             odenkun
           </span>
-        </a>
+        </Link>
+        <nav>
+          <ul className="flex space-x-6 text-gray-600 font-medium">
+            <li>
+              <Link to="/" className="hover:text-green-600 transition-colors">Home</Link>
+            </li>
+            <li>
+              <Link to="/blog" className="hover:text-green-600 transition-colors">Blog</Link>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
   );
